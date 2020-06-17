@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("showgreetings2", function() {
+    $greetings = App\Greeting::all();
+
+    return redirect('HelloWorldController');
+
+    return view('showgreetings', ['greetings' => $greetings]);
 });
+
